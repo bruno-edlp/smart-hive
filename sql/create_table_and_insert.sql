@@ -1,3 +1,63 @@
+CREATE TABLE usuarios (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(50) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL,
+  nome_completo VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  role VARCHAR(50) NOT NULL,
+  ultimo_login DATETIME
+);
+
+
+CREATE TABLE apiarios (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(255) NOT NULL,
+  localizacao VARCHAR(255) NOT NULL,
+  responsavel VARCHAR(255),
+  descricao TEXT
+);
+
+CREATE TABLE colmeias (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(255) NOT NULL,
+  localizacao VARCHAR(255) NOT NULL,
+  status ENUM('Ativa', 'Em manutenção', 'Inativa') DEFAULT 'Ativa'
+);
+
+CREATE TABLE monitoramento_abelhas (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  data_hora DATETIME NOT NULL,
+  numero_abelhas INT NOT NULL,
+  temperatura DECIMAL(5,2),
+  clima VARCHAR(100),
+  situacao VARCHAR(100),
+  observacoes TEXT,
+  colmeia_id INT NOT NULL,
+  FOREIGN KEY (colmeia_id) REFERENCES colmeias(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS predator_detections (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  colmeia_id INT NOT NULL,
+  predator_type_id INT,
+  data_hora DATETIME NOT NULL,
+  descricao TEXT,
+  acoes_tomadas TEXT,
+  resolvido BOOLEAN DEFAULT FALSE,
+  FOREIGN KEY (colmeia_id) REFERENCES colmeias(id) ON DELETE CASCADE,
+  FOREIGN KEY (predator_type_id) REFERENCES predator_types(id) ON DELETE SET NULL
+);
+
+ALTER TABLE colmeias
+ADD COLUMN apiario_id INT,
+ADD CONSTRAINT fk_colmeias_apiario
+FOREIGN KEY (apiario_id) REFERENCES apiarios(id) ON DELETE SET NULL;
+
+ALTER TABLE colmeias ADD nome TEXT;
+ALTER TABLE colmeias MODIFY status TEXT;
+
+--INSERÇÃO DOS DADOS A PARTIR DAQUI
+
 -- Inserir dados de exemplo na tabela colmeias
 INSERT INTO colmeias (nome, localizacao, status) VALUES 
   ('Jataí 01', 'Jardim Botânico - Setor A', 'Ativa'),

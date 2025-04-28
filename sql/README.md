@@ -4,18 +4,18 @@ Este diretório contém os scripts SQL necessários para configurar o banco de d
 
 ## Criação do Banco de Dados
 
-Execute o arquivo `create_database.sql` para criar o banco de dados e as tabelas necessárias.
+### Inicie o xampp
 
-### Instruções
+   1. Abra seu cliente MySQL 
+   2. Navegue até a pasta sql/create_database.sql
+   3. Copie a query até predator_detections
+   4. Execute a query
+   5. Depois copie as duas queryes restantes e execute-as.
 
-1. Acesse o MySQL pela linha de comando ou por um cliente MySQL como o MySQL Workbench
-2. Execute o script SQL com um dos seguintes métodos:
+### Inserindo os dados nas tabelas
 
-   **Usando o MySQL Workbench:**
-   - Abra o MySQL Workbench
-   - Conecte-se à sua instância local do MySQL
-   - Abra o arquivo `create_database.sql`
-   - Execute o script clicando no ícone de raio (⚡)
+   1. Ainda no seu cliente MySQL copie as queries do arquivo create_table_and_insert.sql
+   2. Execute o script SQL
+   3. Após isso os dados devem estar na tabela e disponiveis para consulta
 
-   **Usando a linha de comando:**
 

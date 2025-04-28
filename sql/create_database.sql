@@ -4,8 +4,6 @@ CREATE DATABASE abelhas_nativas;
 
 USE abelhas_nativas;
 
-SELECT * FROM usuarios;
-
 CREATE TABLE colmeias (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
