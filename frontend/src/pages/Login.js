@@ -48,10 +48,9 @@ const Login = ({ onLogin }) => {
           <img src={logo} alt="Logo" />
         </div>
         <div className="hero-body">
-          <h1 className="hero-title">Smart Hive</h1>
+          <h1 className="hero-title">Olá, Seja Bem vindo</h1>
           <span>
-            Subagios maragalhos do timbagios trelhos do chimbagos telos.
-            Simbaralhos do lambatelhos. Tombaralhos do tembagos intrelhos.
+            Sua plataforma de monitoramento de colmeias para prevenção de predadores. O novo conceito de colméia inteligente!
           </span>
         </div>
       </div>
