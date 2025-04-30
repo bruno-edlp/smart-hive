@@ -440,6 +440,7 @@ body {
   color: #03a9f4;
 }
 
+
 /* Animations */
 @keyframes pulse {
   0% {
@@ -666,7 +667,7 @@ body {
     z-index: 1;
     padding: 1.5rem;
     transform: translateY(20px) translateX(50px);
-    box-shadow: 20px 20px 350px rgba(255, 244, 28, 0.93);
+    box-shadow: 20px 20px 100px 20px rgba(255, 244, 28, 0.93);
 
     & .bee-parts {
       width: 20%;

@@ -78,7 +78,7 @@ const Login = ({ onLogin }) => {
 
           <div className="login-body">
             {error && (
-              <Alert variant="danger" className="mb-4">
+              <Alert variant="danger" className="mb-6">
                 <i className="fas fa-exclamation-circle me-2"></i>
                 {error}
               </Alert>
