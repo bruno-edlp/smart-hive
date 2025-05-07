@@ -94,7 +94,7 @@ VALUES
   (NOW() - INTERVAL 3 HOUR, 110, 25.2, 'Ensolarado', 'Normal', 'Observada a rainha na entrada da colmeia', 4),
   (NOW() - INTERVAL 1 HOUR, 75, 22.8, 'Parcialmente nublado', 'Em observação', 'Movimentação menor que o esperado para o horário', 5);
 
-  -- Insert predator types
+  -- Inserção de tipos de predadores
 INSERT INTO predator_types (nome, descricao, nivel_perigo, recomendacoes) VALUES
 ('Formigas', 'Podem invadir colmeias em busca de mel e pólen, causando estresse às abelhas', 'Médio', 'Manter a colmeia elevada e usar barreiras físicas como graxa ou água ao redor dos suportes'),
 ('Aranhas', 'Podem caçar abelhas individualmente na entrada da colmeia', 'Baixo', 'Manter a área ao redor da colmeia limpa de teias'),
@@ -103,8 +103,17 @@ INSERT INTO predator_types (nome, descricao, nivel_perigo, recomendacoes) VALUES
 ('Lagartos', 'Podem se posicionar na entrada da colmeia para capturar abelhas', 'Baixo', 'Manter a área ao redor da colmeia livre de esconderijos para répteis'),
 ('Outros insetos', 'Diversos insetos podem predar abelhas ou competir por recursos', 'Médio', 'Monitorar regularmente e identificar o tipo específico para ação apropriada');
 
--- Add some sample predator detections
+-- Adicionando algumas detecções de predadores
 INSERT INTO predator_detections (colmeia_id, predator_type_id, data_hora, descricao, acoes_tomadas, resolvido) VALUES
 (1, 3, '2023-10-25 14:30:00', 'Grupo de vespas atacando abelhas na entrada da colmeia', 'Instalada armadilha para vespas', TRUE),
 (2, 1, '2023-10-30 09:45:00', 'Trilha de formigas tentando acessar a colmeia', 'Aplicada graxa nos suportes da colmeia', TRUE),
 (4, 5, '2023-11-02 16:20:00', 'Lagarto observado caçando abelhas na entrada', 'Área ao redor da colmeia limpa de vegetação', FALSE);
+
+-- Inserção de alguns apiarios
+INSERT INTO apiarios (nome, localizacao, responsavel, descricao) VALUES
+  ('Apiário Bela Flor', 'Fazenda Santa Rita - MG', 'João Pereira', 'Apiário especializado em abelhas Jataí, com produção de mel para consumo local.'),
+  ('Doce Colmeia', 'Sítio São João - SP', 'Maria das Graças', 'Área de pesquisa e desenvolvimento com monitoramento automatizado.'),
+  ('Mel do Cerrado', 'Chapada dos Veadeiros - GO', 'Carlos Eduardo', 'Apiário sustentável com foco em preservação de espécies nativas.'),
+  ('Florada Pura', 'Vale do Ribeira - SP', 'Ana Luiza', 'Pequena produção familiar voltada para produtos orgânicos.'),
+  ('EcoMel', 'Reserva Ambiental do Pantanal - MS', 'Rafael Monteiro', 'Apiário em área de preservação, com estudo de comportamento das abelhas.'),
+  ('Abelha Viva', 'Campus Rural da UFPR - PR', 'Dr. Helena Rocha', 'Instalação voltada para ensino e extensão universitária.');
