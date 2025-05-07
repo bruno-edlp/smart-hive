@@ -77,6 +77,7 @@ INSERT INTO alertas (colmeia_id, descricao_alerta, data_hora) VALUES
 -- Inserir dados de exemplo na tabela usuários
 INSERT INTO usuarios (username, password, nome_completo, email, role, ultimo_login) VALUES 
   ('gerente', 'gerente123', 'Gerente de Apiário', 'gerente@exemplo.com', 'manager', NOW() - INTERVAL 5 DAY),
+  ('admin', 'admin', 'Administrador', 'admin@exemplo.com', 'manager', NOW() - INTERVAL 5 DAY),
   ('tecnico', 'tecnico123', 'Técnico de Campo', 'tecnico@exemplo.com', 'user', NOW() - INTERVAL 1 DAY),
   ('pesquisador', 'pesq123', 'Pesquisador UFPR', 'pesquisador@exemplo.com', 'researcher', NOW() - INTERVAL 2 HOUR);
 
